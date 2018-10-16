@@ -1,5 +1,5 @@
-# school-management-system
-School Management System with Laravel.
+# School Management System with Laravel
+School Management System with laravel 5.6
 The project is incomplete, however is usable to modify it.
 
 ```
@@ -21,7 +21,7 @@ setup your vhost files.
 
 You can go to the admin dashboard by /admin on the domain, use the email and password from database.
 
-####Features 
+#### Features 
 
 - Employee Management ( Payroll management and calculation)
 - Library Management (Book managing with returning dates)
