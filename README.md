@@ -1,4 +1,4 @@
-# School Management System with Laravel
+# School Management System with Laravel 5.6
 School Management System with laravel 5.6
 The project is incomplete, however is usable to modify it.
 
