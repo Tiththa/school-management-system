@@ -21,12 +21,13 @@ setup your vhost files.
 
 You can go to the admin dashboard by /admin on the domain, use the email and password from database.
 
-####Features
--Employee Management ( Payroll management and calculation)
--Library Management (Book managing with returning dates)
--Student Information Management
--Achievements/Events/Embedded Google Calendar management
--Pdf generating
--Reminder Emails
--Execel and CSV importing for tables
--Barcode attendance system
+####Features 
+
+- Employee Management ( Payroll management and calculation)
+- Library Management (Book managing with returning dates)
+- Student Information Management
+- Achievements/Events/Embedded Google Calendar management
+- Pdf generating
+- Reminder Emails
+- Execel and CSV importing for tables
+- Barcode attendance system
