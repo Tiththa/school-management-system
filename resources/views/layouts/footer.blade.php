@@ -1,0 +1,1 @@
+{{ \Carbon\Carbon::now()->toDayDateTimeString() }}
