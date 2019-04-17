@@ -21,6 +21,8 @@ setup your vhost files.
 
 You can go to the admin dashboard by /admin on the domain, use the email and password from database.
 
+The user credentails can taken from your database and the password is `password` mentioned in `seeds/UsersTableSeeder'
+
 #### Features 
 
 - Employee Management ( Payroll management and calculation)
