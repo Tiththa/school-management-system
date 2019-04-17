@@ -7,17 +7,17 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
   <!-- Font Awesome -->
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/css/AdminLTE.min.css">
-
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -182,11 +182,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li >
-          <a href="{{ route('admin.dashboard') }}">
+        <li class="treeview">
+          <a href="/admin">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
-              <i class="fa  pull-right"></i>
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
 
@@ -195,7 +195,9 @@
           <a href="#">
             <i class="fa fa-users"></i>
             <span>Employee Management</span>
-
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">4</span>
+            </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('departments.index') }}"><i class="fa fa-building-o"></i> Departments</a></li>
@@ -205,15 +207,11 @@
           </ul>
         </li>
         <li>
-          <a href="{{ route('attendance') }}">
-            <i class="fa fa-th"></i> <span>Attendance</span>
-
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('admin.register') }}">
-            <i class="fa Example of user-circle fa-user-circle"></i> <span>Create Admin</span>
-
+          <a href="../widgets.html">
+            <i class="fa fa-th"></i> <span>Widgets</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">Hot</small>
+            </span>
           </a>
         </li>
         <li class="treeview">
@@ -365,242 +363,390 @@
 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/admin"><i class="fa fa-dashboard" class="active"></i> Admin Dashboard</a></li>
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Admin Home</a></li>
 
-
-        @yield('breadcrumb')
+        <li class="active">Admin Dashboard</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-        @yield('content')
 
-    </section>
+      <!-- Default box -->
+      <div class="box">
+        <div class="box-header with-border">
+          <h3 class="box-title">Overview</h3>
 
-
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.0.1
-        </div>
-        <strong>Copyright &copy; 2018 <a href="https://tfrobomatic.wordpress.com">CodeGracious</a>.</strong> All rights
-        reserved.
-      </footer>
-
-      <!-- Control Sidebar -->
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-          <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-
-          <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-          <!-- Home tab content -->
-          <div class="tab-pane" id="control-sidebar-home-tab">
-            <h3 class="control-sidebar-heading">Recent Activity</h3>
-            <ul class="control-sidebar-menu">
-              <li>
-                <a href="javascript:void(0)">
-                  <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                    <p>Will be 23 on April 24th</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  <i class="menu-icon fa fa-user bg-yellow"></i>
-
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                    <p>New phone +1(800)555-1234</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                    <p>nora@example.com</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-                  <div class="menu-info">
-                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                    <p>Execution time 5 seconds</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <!-- /.control-sidebar-menu -->
-
-            <h3 class="control-sidebar-heading">Tasks Progress</h3>
-            <ul class="control-sidebar-menu">
-              <li>
-                <a href="javascript:void(0)">
-                  <h4 class="control-sidebar-subheading">
-                    Custom Template Design
-                    <span class="label label-danger pull-right">70%</span>
-                  </h4>
-
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  <h4 class="control-sidebar-subheading">
-                    Update Resume
-                    <span class="label label-success pull-right">95%</span>
-                  </h4>
-
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  <h4 class="control-sidebar-subheading">
-                    Laravel Integration
-                    <span class="label label-warning pull-right">50%</span>
-                  </h4>
-
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)">
-                  <h4 class="control-sidebar-subheading">
-                    Back End Framework
-                    <span class="label label-primary pull-right">68%</span>
-                  </h4>
-
-                  <div class="progress progress-xxs">
-                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <!-- /.control-sidebar-menu -->
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
+                    title="Collapse">
+              <i class="fa fa-minus"></i></button>
 
           </div>
-          <!-- /.tab-pane -->
-          <!-- Stats tab content -->
-          <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-          <!-- /.tab-pane -->
-          <!-- Settings tab content -->
-          <div class="tab-pane" id="control-sidebar-settings-tab">
-            <form method="post">
-              <h3 class="control-sidebar-heading">General Settings</h3>
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Report panel usage
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-
-                <p>
-                  Some information about this general settings option
-                </p>
-              </div>
-              <!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Allow mail redirect
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-
-                <p>
-                  Other sets of options are available
-                </p>
-              </div>
-              <!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Expose author name in posts
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-
-                <p>
-                  Allow the user to show his name in blog posts
-                </p>
-              </div>
-              <!-- /.form-group -->
-
-              <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Show me as online
-                  <input type="checkbox" class="pull-right" checked>
-                </label>
-              </div>
-              <!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Turn off notifications
-                  <input type="checkbox" class="pull-right">
-                </label>
-              </div>
-              <!-- /.form-group -->
-
-              <div class="form-group">
-                <label class="control-sidebar-subheading">
-                  Delete chat history
-                  <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                </label>
-              </div>
-              <!-- /.form-group -->
-            </form>
-          </div>
-          <!-- /.tab-pane -->
         </div>
-      </aside>
-      <!-- /.control-sidebar -->
-      <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar -->
-      <div class="control-sidebar-bg"></div>
+        <div class="box-body">
+
+
+            <!-- <div class="box-body"> -->
+    					<div class="row">
+    						<div class="col-lg-3 text-center">
+    							<div class="card">
+    								<div class="card-header bg-primary text-white">Payroll issued</div>
+    								<div class="card-body">{{ $payrolls->count() }}</div>
+    							</div>
+    						</div>
+
+    						<div class="col-lg-3 text-center">
+    							<div class="card">
+    								<div class="card-header bg-success text-white">Employee Count</div>
+    								<div class="card-body">{{ $employeesCount }}</div>
+    							</div>
+    						</div>
+
+    						<div class="col-lg-3 text-center">
+    							<div class="card">
+    								<div class="card-header bg-info text-white">Role Count</div>
+    								<div class="card-body">{{ $roles }}</div>
+    							</div>
+    						</div>
+
+    						<div class="col-lg-3 text-center">
+    							<div class="card">
+    								<div class="card-header bg-secondary text-white">Departments</div>
+    								<div class="card-body">{{ $departments }}</div>
+    							</div>
+    						</div>
+
+
+    					<div class="col-lg-3 text-center">
+    						<div class="card">
+    							<div class="card-header bg-info text-white">Users</div>
+    							<div class="card-body">{{ $usersCount }}</div>
+    						</div>
+    					</div>
+
+    					<div class="col-lg-3 text-center">
+    						<div class="card">
+    							<div class="card-header bg-info text-white">Admins</div>
+    							<div class="card-body">{{ $adminsCount }}</div>
+    						</div>
+    					</div>
+    				</div>
+
+
+        <!-- /.box-body -->
+        <div class="box-footer">
+          Footer
+        </div>
+        <!-- /.box-footer-->
+      </div>
+      <!-- /.box -->
+      <hr>
+    <div class="container-fluid">
+      <h3>Latest Employees</h3>
+
+      <table class= "table table-hover">
+        <thead>
+          <tr>
+            <th>Date Added</td>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Department</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @if($employees->count()> 0)
+            @foreach($employees as $employee)
+              <tr>
+                <td>{{ $employee->created_at->toDateString() }}</td>
+                <td>{{ $employee->name }}</td>
+                <td>{{ $employee->email }}</td>
+                <td>{{ $employee->role->name }}</td>
+                <td>{{ $employee->role->department->name }}</td>
+              </tr>
+            @endforeach
+          @else
+            <tr>
+              <th colspan="5" class="text-center">Empty</th>
+            </tr>
+          @endif
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h3>Latest issued payroll</h3>
+
+      <table class= "table table-hover">
+        <thead>
+          <tr>
+            <th>Date-issued</td>
+            <th>Name</th>
+            <th>Over-Time</th>
+            <th>Hours</th>
+            <th>Rate</th>
+            <th>Gross</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @if($payrolls->count()> 0)
+            @foreach($payrolls as $payroll)
+              <tr>
+                <td>{{ $payroll->created_at->toDateString() }}</td>
+                <td>{{ $payroll->employee->name }}</td>
+                <td>
+                  @if($payroll->over_time)
+                    <p><b>Yes</b></p>
+                  @else
+                    <p><b>No</b></p>
+                  @endif
+                </td>
+                <td>{{ $payroll->hours }}</td>
+                <td>{{ $payroll->rate }}</td>
+                <td>{{ $payroll->gross }}</td>
+              </tr>
+            @endforeach
+          @else
+            <tr>
+              <th colspan="5" class="text-center">Empty</th>
+            </tr>
+          @endif
+        </tbody>
+      </table>
     </div>
-    <!-- ./wrapper -->
+    <div class="ajax-content">
+    </div>
+  </div>
+</div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
 
-    <!-- jQuery 3 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
-    <!-- Bootstrap 3.3.7 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- SlimScroll -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
-    <!-- FastClick -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
-    <!-- AdminLTE App -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/js/demo.js"></script>
-    <script>
-      $(document).ready(function () {
-        $('.sidebar-menu').tree()
-      })
-    </script>
-    </body>
-    </html>
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 1.0.1
+    </div>
+    <strong>Copyright &copy; 2018 <a href="https://tfrobomatic.wordpress.com">CodeGracious</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <!-- Home tab content -->
+      <div class="tab-pane" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Recent Activity</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Will be 23 on April 24th</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-user bg-yellow"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+
+                <p>New phone +1(800)555-1234</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                <p>nora@example.com</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="menu-icon fa fa-file-code-o bg-green"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+
+                <p>Execution time 5 seconds</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+        <h3 class="control-sidebar-heading">Tasks Progress</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Custom Template Design
+                <span class="label label-danger pull-right">70%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Update Resume
+                <span class="label label-success pull-right">95%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Laravel Integration
+                <span class="label label-warning pull-right">50%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <h4 class="control-sidebar-subheading">
+                Back End Framework
+                <span class="label label-primary pull-right">68%</span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.control-sidebar-menu -->
+
+      </div>
+      <!-- /.tab-pane -->
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <!-- /.tab-pane -->
+      <!-- Settings tab content -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">General Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Report panel usage
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Some information about this general settings option
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Allow mail redirect
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Other sets of options are available
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Expose author name in posts
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Allow the user to show his name in blog posts
+            </p>
+          </div>
+          <!-- /.form-group -->
+
+          <h3 class="control-sidebar-heading">Chat Settings</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Show me as online
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Turn off notifications
+              <input type="checkbox" class="pull-right">
+            </label>
+          </div>
+          <!-- /.form-group -->
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Delete chat history
+              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+            </label>
+          </div>
+          <!-- /.form-group -->
+        </form>
+      </div>
+      <!-- /.tab-pane -->
+    </div>
+  </aside>
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sidebar-menu').tree()
+  })
+</script>
+</body>
+</html>
