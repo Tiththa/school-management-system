@@ -142,29 +142,6 @@ Route::get('/users/ach/delete','AchievementsController@destroy')->name('delete-u
 
 Route::get('/accounts', 'ExpenseController@show')->name('accountantdashboard');
 Route::get('/accounts/expenses/delete/{id}', 'ExpenseController@destroy')->name('delete.expenses');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/accounts/add_expenses', 'ExpenseController@addview')->name('add.expenses');
 Route::post('/accounts/add_expenses', 'ExpenseController@add')->name('expense.add');
 Route::get('/accounts/search' , 'ExpenseController@search')->name('searchexpenses');
