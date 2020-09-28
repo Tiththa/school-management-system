@@ -2,22 +2,37 @@
 School Management System with laravel 5.6
 The project is incomplete, however is usable to modify it.
 
+## Installation
 ```
-composer update
+git clone the project
+cd /your-project
+composer install
+cp .env.example .env // Make a copy of the env file and save as .env
 ```
-
-Copy paste the env file and setup your mysql database
 
 ```
 php artisan key:generate
-php artisan migrate
-php artisan db:seed
-php artisan db:seed --class=UsersTableSeeder
-php artisan db:seed --class=AdminsTableSeeder
-
+```
+Create a mysql database using phpmyadmin or anyother client and configure those details in your env file
+```
+DB_DATABASE=DATABSE_NAME_YOUR_CREATED
+DB_USERNAME=YOUR_DATABASE_USERNAME
+DB_PASSWORD=YOUR_DATABASE_PASSWORD
 ```
 
-setup your vhost files.
+Database Migration and Seeding fake data
+```
+php artisan migrate --seed  // Migrate and Seed the database (ALl in-one command)
+```
+or You can individually seed with
+```
+php artisan db:seed  
+```
+
+Please note:
+`DatabaseSeeder.php` includes `AdminsTableSeeder` and 'UsersTableSeeder'. The `AdminsTableSeeder` includes `BooksSeeder` as well. You can change the respective values to generate fake data as you wish.
+
+setup your vhost files or `php artisan serve`.
 
 You can go to the admin dashboard by /admin on the domain, use the email and password from database.
 
