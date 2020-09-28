@@ -76,7 +76,7 @@ class BookIssueController extends Controller
 
 
 
-    return view('library.issued-books',['issues'=>$issues],compact('issue-books'));
+    return view('library.issued-books',compact('issues'));
 
   }
 

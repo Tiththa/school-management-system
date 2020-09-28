@@ -30,7 +30,7 @@
       @foreach ($books as $book)
       <tr>
 
-        <td><img src="{{asset('/storage/uploads/'.$book->filename) }}" alt="image" width="60px" height="50px"/></td>
+        <td><img src="{{asset('/storage/uploads/'.$book->filename) }}" alt="image" width="60px" height="50px" onerror="this.src='https://m.media-amazon.com/images/I/51I1qxcnkkL.jpg'" /></td>
         <td><a href="{{ route('book.show', ['id' => $book->id]) }}">{{ $book->name}}</a></td>
         <td>{{ $book->author}}</td>
         <td>{{ $book->category }}</td>

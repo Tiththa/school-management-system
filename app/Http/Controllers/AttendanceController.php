@@ -41,7 +41,7 @@ class AttendanceController extends Controller
     $current = new Carbon();
 
 
-    return view('attendance',['attendances'=>$attendances],compact('attendance'));
+    return view('attendance',compact('attendances'));
 
   }
 

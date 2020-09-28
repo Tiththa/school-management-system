@@ -116,7 +116,7 @@ class UserRegisterController extends Controller
                               ->paginate(15);
 
 
-      return view('student.student-index',['users'=>$users,'usersCount' => User::count()],compact('student-index'));
+      return view('student.student-index',compact('users'))->with('usersCount',User::count());
 
     }
 

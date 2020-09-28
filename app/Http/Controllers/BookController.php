@@ -68,7 +68,7 @@ class BookController extends Controller
 
 
 
-    return view('library.show-books',['books'=>$books],compact('book'));
+    return view('library.show-books',compact('books'));
 
   }
 

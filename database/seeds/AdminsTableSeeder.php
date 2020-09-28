@@ -28,5 +28,22 @@ class AdminsTableSeeder extends Seeder
           'password' => bcrypt('password'),
       ]);
     }
+
+    //create books fake data
+
+    $faker = Faker::create();
+      foreach (range(1,10) as $index) {
+
+        $category = $faker->randomElement($array = array('Science Fiction','Non Fiction'));
+
+        DB::table('books')->insert([
+            'name' =>$faker->text($maxNbChars = 200),
+            'category' => $category,
+            'author' => $faker->name,
+            'summary' => $faker->text,
+
+
+        ]);
+      }
   }
 }
