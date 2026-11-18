@@ -70,6 +70,9 @@ class UserRegisterController extends Controller
 
     protected function Update(Request $request, $id)
     {
+        if(!Gate::allows('isAdmin')){
+           abort(403);
+         }
         // return User::create([
         //     'name' => $data['name'],
         //     'email' => $data['email'],
